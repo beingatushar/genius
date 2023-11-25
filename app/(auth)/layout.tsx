@@ -1,13 +1,13 @@
-import React from 'react'
-
-type Props = {
-    children: React.ReactNode
-}
-
-const AuthLayout = ({ children }: Props) => {
+const AuthLayout = ({
+    children
+}: {
+    children: React.ReactNode;
+}) => {
     return (
-        <div className='flex items-center justify-center'>{children}</div>
-    )
+        <main className="h-full bg-[#111827] flex items-center justify-center">
+            {children}
+        </main>
+    );
 }
 
 export default AuthLayout;

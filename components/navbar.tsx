@@ -1,21 +1,17 @@
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { Menu } from 'lucide-react'
-import { UserButton } from '@clerk/nextjs'
+import { UserButton } from "@clerk/nextjs";
 
-type Props = {}
+import { MobileSidebar } from "@/components/mobile-sidebar";
 
-const Navbar = (props: Props) => {
+const Navbar = async () => {
+
     return (
-        <nav className='flex items-center p-4 '>
-            <Button variant="ghost" size="icon" className='md:hidden'>
-                <Menu />
-            </Button>
+        <div className="flex items-center p-4">
+            <MobileSidebar />
             <div className="flex w-full justify-end">
-                <UserButton afterSignOutUrl='/' />
+                <UserButton afterSignOutUrl="/" />
             </div>
-        </nav>
-    )
+        </div>
+    );
 }
 
-export default Navbar
+export default Navbar;
