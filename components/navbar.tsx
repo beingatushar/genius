@@ -8,14 +8,22 @@ const Navbar = async () => {
   const apiLimitCount = await getApiLimitCount();
   const isPro = await checkSubscription();
 
-  return ( 
+  return (
     <div className="flex items-center p-4">
       <MobileSidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       <div className="flex w-full justify-end">
-        <UserButton afterSignOutUrl="/" />
+        {isPro ?
+          <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-0 p-0.5 rounded-full">
+            <UserButton afterSignOutUrl="/" />
+          </div>
+          :
+          <div className="bg-primary p-0.5 rounded-full">
+            <UserButton afterSignOutUrl="/" />
+          </div>
+        }
       </div>
     </div>
-   );
+  );
 }
- 
+
 export default Navbar;
