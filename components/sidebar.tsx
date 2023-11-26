@@ -6,8 +6,11 @@ import { Montserrat } from 'next/font/google'
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const poppins = Montserrat({ weight: '600', subsets: ['latin'] });
 import { cn } from "@/lib/utils";
+import { FreeCounter } from "@/components/free-counter";
+
+const poppins = Montserrat({ weight: '600', subsets: ['latin'] });
+
 const routes = [
     {
         label: 'Dashboard',
@@ -52,8 +55,15 @@ const routes = [
     },
 ];
 
-const Sidebar = () => {
+export const Sidebar = ({
+    apiLimitCount = 0,
+    isPro = false
+}: {
+    apiLimitCount: number;
+    isPro: boolean;
+}) => {
     const pathname = usePathname();
+
     return (
         <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
             <div className="px-3 py-2 flex-1">
@@ -83,8 +93,10 @@ const Sidebar = () => {
                     ))}
                 </div>
             </div>
+            <FreeCounter
+                apiLimitCount={apiLimitCount}
+                isPro={isPro}
+            />
         </div>
     );
-}
-
-export default Sidebar;
+};
