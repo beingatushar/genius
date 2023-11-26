@@ -45,3 +45,4 @@ export const resolutionOptions = [
     label: "1024x1024",
   },
 ];
+

@@ -1,25 +1,15 @@
-import { Button } from '@/components/ui/button'
-import React from 'react'
-import Link from "next/link"
-type Props = {}
+import { LandingNavbar } from "@/components/landing-navbar";
+import { LandingHero } from "@/components/landing-hero";
+import { LandingContent } from "@/components/landing-content";
 
-const LandingPage = (props: Props) => {
-    return (
-        <>
-
-            <div>LandingPage (Unprotected) </div>
-            <div>
-                <Link href="sign-in"  >
-                    <Button>Sign In</Button>
-                </Link>
-            </div>
-            <div>
-                <Link href="sign-up"  >
-                    <Button>Sign Up</Button>
-                </Link>
-            </div>
-        </>
-    )
+const LandingPage = () => {
+  return (
+    <div className="h-full ">
+      <LandingNavbar />
+      <LandingHero />
+      <LandingContent />
+    </div>
+  );
 }
 
-export default LandingPage
+export default LandingPage;
