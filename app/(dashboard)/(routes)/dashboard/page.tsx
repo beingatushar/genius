@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { FaArrowRight as ArrowRight } from 'react-icons/fa';
 import { useRouter } from "next/navigation";
 
 import { Card } from "@/components/ui/card";

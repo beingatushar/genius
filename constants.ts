@@ -1,4 +1,5 @@
-import { Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
+// import { Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
+import { FaCode as Code, FaImage as ImageIcon, FaComment as MessageSquare, FaMusic as Music, FaVideo as VideoIcon } from 'react-icons/fa';
 
 export const MAX_FREE_COUNTS = 5;
 

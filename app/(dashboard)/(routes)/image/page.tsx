@@ -5,7 +5,9 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Download, ImageIcon } from "lucide-react";
+
+import { FaCode as Code, FaImage as ImageIcon, FaComment as MessageSquare, FaMusic as Music, FaVideo as VideoIcon, FaCloudDownloadAlt as Download } from 'react-icons/fa';
+
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -58,7 +60,7 @@ const PhotoPage = () => {
     }
   }
 
-  return ( 
+  return (
     <div>
       <Heading
         title="Image Generation"
@@ -69,8 +71,8 @@ const PhotoPage = () => {
       />
       <div className="px-4 lg:px-8">
         <Form {...form}>
-          <form 
-            onSubmit={form.handleSubmit(onSubmit)} 
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
             className="
               rounded-lg 
               border 
@@ -91,8 +93,8 @@ const PhotoPage = () => {
                   <FormControl className="m-0 p-0">
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
-                      disabled={isLoading} 
-                      placeholder="A picture of a horse in Swiss alps" 
+                      disabled={isLoading}
+                      placeholder="A picture of a horse in Swiss alps"
                       {...field}
                     />
                   </FormControl>
@@ -104,10 +106,10 @@ const PhotoPage = () => {
               name="amount"
               render={({ field }) => (
                 <FormItem className="col-span-12 lg:col-span-2">
-                  <Select 
-                    disabled={isLoading} 
-                    onValueChange={field.onChange} 
-                    value={field.value} 
+                  <Select
+                    disabled={isLoading}
+                    onValueChange={field.onChange}
+                    value={field.value}
                     defaultValue={field.value}
                   >
                     <FormControl>
@@ -117,8 +119,8 @@ const PhotoPage = () => {
                     </FormControl>
                     <SelectContent>
                       {amountOptions.map((option) => (
-                        <SelectItem 
-                          key={option.value} 
+                        <SelectItem
+                          key={option.value}
                           value={option.value}
                         >
                           {option.label}
@@ -134,10 +136,10 @@ const PhotoPage = () => {
               name="resolution"
               render={({ field }) => (
                 <FormItem className="col-span-12 lg:col-span-2">
-                  <Select 
-                    disabled={isLoading} 
-                    onValueChange={field.onChange} 
-                    value={field.value} 
+                  <Select
+                    disabled={isLoading}
+                    onValueChange={field.onChange}
+                    value={field.value}
                     defaultValue={field.value}
                   >
                     <FormControl>
@@ -147,8 +149,8 @@ const PhotoPage = () => {
                     </FormControl>
                     <SelectContent>
                       {resolutionOptions.map((option) => (
-                        <SelectItem 
-                          key={option.value} 
+                        <SelectItem
+                          key={option.value}
                           value={option.value}
                         >
                           {option.label}
@@ -193,7 +195,7 @@ const PhotoPage = () => {
         </div>
       </div>
     </div>
-   );
+  );
 }
- 
+
 export default PhotoPage;
