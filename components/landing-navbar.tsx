@@ -26,7 +26,7 @@ export const LandingNavbar = () => {
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
           <Button variant="outline" className="rounded-full">
             {
-              isSignedIn ? "Go to dashboard" : "Get Started"
+              isSignedIn ? "Navigate to Dashboard" : "Start Now"
             }
           </Button>
         </Link>
