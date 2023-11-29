@@ -41,6 +41,14 @@ export const tools = [
         bgColor: "bg-green-700/10",
         href: '/code',
     },
+
+    {
+        label: 'Image  To Text',
+        icon: MessageSquare,
+        href: '/image-to-text',
+        color: "text-violet-500",
+        bgColor: "bg-violet-500/10",
+    },
 ];
 export const testimonials = [
     {
