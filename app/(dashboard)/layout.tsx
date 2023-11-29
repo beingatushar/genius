@@ -12,11 +12,11 @@ const DashboardLayout = async ({
   const isPro = await checkSubscription();
 
   return (
-    <div className="h-full relative">
+    <div className="h-full relative bg-[#272a27] text-white">
       <div className="hidden h-full md:flex md:w-72 md:flex-col md:fixed md:inset-y-0 z-80 bg-gray-900">
         <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       </div>
-      <main className="md:pl-72 pb-10">
+      <main className="md:pl-72 pb-10 bg-[#272a27]">
         <Navbar />
         {children}
       </main>

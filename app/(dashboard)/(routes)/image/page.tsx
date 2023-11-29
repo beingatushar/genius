@@ -84,6 +84,7 @@ const PhotoPage = () => {
               grid
               grid-cols-12
               gap-2
+              bg-white text-black
             "
           >
             <FormField

@@ -85,6 +85,7 @@ const CodePage = () => {
                 grid
                 grid-cols-12
                 gap-2
+                bg-white text-black
               "
             >
               <FormField
@@ -112,7 +113,7 @@ const CodePage = () => {
             </form>
           </Form>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="space-y-4 mt-4 text-black">
           {isLoading && (
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
               <Loader />
