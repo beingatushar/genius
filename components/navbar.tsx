@@ -13,7 +13,7 @@ const Navbar = async () => {
       <MobileSidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       <div className="flex w-full justify-end">
         {isPro ?
-          <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-0 p-0.5 rounded-full">
+          <div className="bg-gradient-to-r from-green-800 via-green-600 to-green-100 text-white border-0 p-0.5 rounded-full">
             <UserButton afterSignOutUrl="/" />
           </div>
           :
