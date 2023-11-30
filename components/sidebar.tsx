@@ -11,6 +11,7 @@ import { FreeCounter } from "@/components/free-counter";
 import { tools } from '@/constants';
 import { UserButton } from "@clerk/nextjs";
 import { UserAvatar } from "./user-avatar";
+import { UserDisplay } from "./user-display";
 
 const poppins = Montserrat({ weight: '600', subsets: ['latin'] });
 
@@ -28,30 +29,26 @@ const routes = [
     href: '/settings',
   },
 ];
-
 export const Sidebar = ({
   apiLimitCount = 0,
-  isPro = false
+  isPro = false,
 }: {
   apiLimitCount: number;
   isPro: boolean;
 }) => {
   const pathname = usePathname();
-
   return (
     <div className="space-y-4 py-4 flex flex-col h-full bg-[#141614] text-white">
       <div className="px-3 py-2 flex-1">
-        <Link href="/dashboard" className="flex items-center pl-3 mb-14">
+        <Link href="/dashboard" className="flex items-center pl-3" >
           <div className="relative h-8 w-8 mr-4">
-            <Image fill alt="Logo" src="/logo.png" />
+            <Image alt="Logo" src="/logo.png" width={32} height={32} />
           </div>
           <h1 className={cn("text-2xl font-bold", poppins.className)}>
             Genius.AI
           </h1>
         </Link>
-        <div className="w-full h-36 flex justify-center">
-          <UserButton afterSignOutUrl="/" />
-        </div>
+        <UserDisplay />
         <div className="space-y-1">
           {routes.map((route) => (
             <Link
