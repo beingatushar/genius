@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { FreeCounter } from "@/components/free-counter";
 import { tools } from '@/constants';
+import { UserButton } from "@clerk/nextjs";
+import { UserAvatar } from "./user-avatar";
 
 const poppins = Montserrat({ weight: '600', subsets: ['latin'] });
 
@@ -47,6 +49,9 @@ export const Sidebar = ({
             Genius.AI
           </h1>
         </Link>
+        <div className="w-full h-36 flex justify-center">
+          <UserButton afterSignOutUrl="/" />
+        </div>
         <div className="space-y-1">
           {routes.map((route) => (
             <Link

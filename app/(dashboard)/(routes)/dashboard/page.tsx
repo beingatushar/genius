@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 import { tools } from "@/constants";
+import Link from 'next/link';
 
 export default function HomePage() {
   const router = useRouter();
@@ -22,21 +23,30 @@ export default function HomePage() {
           Engage in conversation with cutting-edge AI technology - Embrace the power of AI
         </p>
       </div>
-      <div className="px-4 md:px-20 lg:px-32 space-y-4">
-        {tools.map((tool) => (
-          <Card onClick={() => router.push(tool.href)} key={tool.href} className="p-4 border-white/10 flex items-center justify-between hover:shadow-md transition cursor-pointer">
-            <div className="flex items-center gap-x-4">
-              <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
-                <tool.icon className={cn("w-8 h-8", tool.color)} />
-              </div>
-              <div className="font-semibold">
-                {tool.label}
-              </div>
-            </div>
-            <ArrowRight className="w-5 h-5" />
-          </Card>
-        ))}
+      <div className="px-4 md:px-20 lg:px-32 space-y-0 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 md:gap-2">
+        {
+          tools.map(tool => (
+            <Link href={tool.href} className="p-1" key={tool.href} ><ImageCard title={tool.label} description={tool.description} image={tool.image} /></Link>
+          ))
+        }
+      </div>
+
+
+
+    </div>
+  );
+
+}
+const ImageCard = ({ title, description, image }: { title: string; description: string, image: string }) => {
+  return (
+    <div className="max-w-sm rounded overflow-hidden shadow-lg h-full bg-white text-black cursor-pointer transition-transform transform hover:translate-y-[-5px]">
+      <div className="aspect-w-16 aspect-h-9">
+        <img className="object-cover w-full h-[140px]" src={image} alt={title} />
+      </div>
+      <div className="px-4 py-3">
+        <div className="font-bold text-xl mb-2 text-center h-[50px]">{title}</div>
+        <p className="text-gray-700 text-base">{description}</p>
       </div>
     </div>
   );
-}
+};
