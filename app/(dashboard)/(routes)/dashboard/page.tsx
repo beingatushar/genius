@@ -3,9 +3,6 @@
 import { FaArrowRight as ArrowRight } from 'react-icons/fa';
 import { useRouter } from "next/navigation";
 
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-
 import { tools } from "@/constants";
 import Link from 'next/link';
 
